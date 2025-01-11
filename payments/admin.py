@@ -3,7 +3,7 @@ from .models import Phone, Transaction
 
 @admin.register(Phone)
 class PhoneAdmin(admin.ModelAdmin):
-    list_display = ('phone_number', 'provider', 'amount', 'payment_day', 'payment_time')
+    list_display = ('phone_number', 'provider', 'amount', 'payment_day')
     search_fields = ('phone_number', 'provider')
     list_filter = ('provider',)
 

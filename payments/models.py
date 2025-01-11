@@ -3,12 +3,11 @@ from django.utils.timezone import now
 
 
 class Phone(models.Model):
-    provider = models.CharField(max_length=50)  # Провайдер, например, Мегафон
+    provider = models.CharField(max_length=50)  # Провайдер
     modem_number = models.IntegerField()        # Номер модема
     phone_number = models.CharField(max_length=15)  # Номер телефона
     amount = models.DecimalField(max_digits=10, decimal_places=2)  # Абонентская плата
-    payment_day = models.IntegerField()         # Число месяца для оплаты
-    payment_time = models.TimeField()           # Время оплаты
+    payment_day = models.IntegerField()         # Число месяца для оплаты (1-31)
 
     def __str__(self):
         return f"{self.phone_number} - {self.provider}"
