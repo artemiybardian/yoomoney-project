@@ -1,6 +1,6 @@
 from celery import shared_task
 from .models import Phone, Transaction
-from yoomoney_api import send_payment
+from .yoomoney_api import send_payment
 
 
 @shared_task
